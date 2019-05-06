@@ -1,0 +1,11 @@
+{
+  "name": "@genug/functions",
+  "version": "0.0.1",
+  "description": "Genug backend functions",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schmollmolch/genug",
+    "directory": "functions"
+  }
+}
