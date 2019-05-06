@@ -1,5 +1,7 @@
 # genug
 
+https://genug.co
+
 ## tooling
 
 ### backend

@@ -1,5 +1,8 @@
 {
     "version": 2,
+    "scope": "genug",
+    "alias": "genug.co",
+    "routes": [{ "src": "/", "dest": "/frontend/index.html" }],
     "builds": [
         {
             "src": "functions/index.js",
