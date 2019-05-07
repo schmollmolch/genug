@@ -4,12 +4,12 @@
     "alias": "genug.co",
     "routes": [
         {
-            "src": "/api/*",
-            "dest": "/functions/*"
+            "src": "/api/(.*)",
+            "dest": "/functions/$1"
         },
         {
-            "src": "/*",
-            "dest": "/frontend/*"
+            "src": "/(.*)",
+            "dest": "/frontend/$1"
         }
     ],
     "builds": [
