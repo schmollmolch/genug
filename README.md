@@ -1,4 +1,4 @@
-# genug
+# genug!
 
 https://genug.co
 

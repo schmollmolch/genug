@@ -9,5 +9,5 @@
   "workspaces": [
     "functions",
     "frontend"
- ]  
+  ]
 }

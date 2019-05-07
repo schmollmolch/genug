@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage" : "http://genug.co/",
+  "license": "MIT",
   "dependencies": {
     "@ionic/react": "^0.0.5",
     "react": "^16.8.6",
@@ -25,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "now-build": "npm run build"
+    "now-build": "SKIP_PREFLIGHT_CHECK=true npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
