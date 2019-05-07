@@ -2,15 +2,27 @@
     "version": 2,
     "scope": "genug",
     "alias": "genug.co",
-    "routes": [{ "src": "/", "dest": "/frontend/index.html" }],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "/functions/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/frontend/$1"
+        }
+    ],
     "builds": [
         {
             "src": "functions/index.js",
             "use": "@now/node"
         },
         {
-            "src": "frontend/index.html",
-            "use": "@now/static"
+            "src": "frontend/package.json",
+            "use": "@now/static-build",
+            "config": {
+                "distDir": "build"
+            }
         }
     ]
 }
