@@ -27,10 +27,10 @@
 }
 
 @keyframes genug-logo-spin {
-  0% {
+  0%,90% { /* creates delay */
     transform: rotate(0deg);
   }
-  10%, 100% { /* creates delay */
+  100% { 
     transform: rotate(180deg);
   }
 }
