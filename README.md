@@ -2,6 +2,8 @@
 
 ![genug](./assets/logo.svg)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/schmollmolch/genug.svg)](https://greenkeeper.io/)
+
 https://genug.co
 
 ## tooling
