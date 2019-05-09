@@ -1,4 +1,6 @@
-# genug!
+# genug! 
+
+![genug](./assets/logo.svg)
 
 https://genug.co
 

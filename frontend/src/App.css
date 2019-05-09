@@ -2,10 +2,13 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.genug-logo {
+  animation: genug-logo-spin infinite 20s cubic-bezier(1,0.1,0.1,1);
+  height: 4vmin;
   pointer-events: none;
+  float:left;
+  display: block;
+  width: 4vmin;
 }
 
 .App-header {
@@ -13,21 +16,21 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: left;
+  justify-content: left;
+  font-size: calc(20px + 2vmin);
   color: white;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #000000;
 }
 
-@keyframes App-logo-spin {
-  from {
+@keyframes genug-logo-spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  10%, 100% { /* creates delay */
+    transform: rotate(180deg);
   }
 }

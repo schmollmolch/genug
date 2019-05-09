@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import './App.css';
 import '@ionic/core/css/core.css';
 import '@ionic/core/css/ionic.bundle.css';
 import logo from './logo.svg';
-import './App.css';
 
 import {
   IonApp,
@@ -11,21 +11,35 @@ import {
   IonCardHeader,
   IonCardTitle,
   IonCardSubtitle,
-  IonCardContent
+  IonCardContent,
+  IonHeader,
+  IonToolbar,
+  IonBackButton,
+  IonButtons,
+  IonTitle
 } from '@ionic/react';
 
 class App extends Component {
   render() {
     return (
       <IonApp>
+        <IonHeader>
+          <IonToolbar>
+            <IonButtons slot="start">
+              <IonBackButton goBack={() => { }} />
+            </IonButtons>
+            <IonTitle><img src={logo} className="genug-logo" alt="logo" />genug!</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+
         <IonContent>
           <IonCard>
             <IonCardHeader>
-              <IonCardSubtitle>genug!</IonCardSubtitle>
-              <IonCardTitle>What's next?</IonCardTitle>
+              <IonCardSubtitle>Timer timer</IonCardSubtitle>
+              <IonCardTitle>Hello John!</IonCardTitle>
             </IonCardHeader>
             <IonCardContent>
-            <img src={logo} className="App-logo" alt="logo" />
+              What's next?
             </IonCardContent>
           </IonCard>
         </IonContent>
