@@ -15,5 +15,7 @@
     "ts-node": "^7.0.1",
     "typescript": "^3.2.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "helmet": "^3.18.0"
+  }
 }
