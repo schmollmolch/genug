@@ -2,7 +2,7 @@
   "name": "genug",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://genug.co/",
+  "homepage": "http://genug.co/",
   "license": "MIT",
   "dependencies": {
     "@ionic/react": "^0.0.5",
@@ -19,6 +19,7 @@
     "@types/react-router": "^4.4.5",
     "@types/react-router-dom": "^4.3.3",
     "react-scripts": "3.0.0",
+    "tslint": "^5.16.0",
     "typescript": "3.4.5"
   },
   "scripts": {
