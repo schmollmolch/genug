@@ -4,11 +4,10 @@
 
 .genug-logo {
   animation: genug-logo-spin infinite 20s cubic-bezier(1,0.1,0.1,1);
-  height: 4vmin;
+  height: 30px;
   pointer-events: none;
   float:left;
   display: block;
-  width: 4vmin;
 }
 
 .App-header {
