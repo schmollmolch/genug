@@ -11,7 +11,8 @@ app.get('*', (req, res) => {
     const timer: Timer = {
         remainingSecondsSinceLastStart: 23,
         started: new Date().toISOString(),
-        status: 'paused'
+        status: 'paused',
+        name: 'John plays Splatoon'
     };
 
     res.status(200).json(timer);
