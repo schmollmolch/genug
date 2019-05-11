@@ -2,23 +2,27 @@
   "name": "genug",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://genug.co/",
+  "homepage": "http://genug.co/",
   "license": "MIT",
   "dependencies": {
     "@ionic/react": "^0.0.5",
+    "debug": "^4.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
+    "@types/debug": "^4.1.4",
     "@types/jest": "24.0.12",
     "@types/node": "12.0.0",
     "@types/react": "16.8.17",
     "@types/react-dom": "16.8.4",
     "@types/react-router": "^5.0.0",
     "@types/react-router-dom": "^4.3.3",
-    "react-scripts": "3.0.1",
+    "react-scripts": "^3.0.1",
+    "tslint": "^5.16.0",
     "typescript": "3.4.5"
   },
   "scripts": {

@@ -14,11 +14,11 @@
     ],
     "builds": [
         {
-            "src": "functions/index.js",
+            "src": "./functions/**/*.ts",
             "use": "@now/node"
         },
         {
-            "src": "frontend/package.json",
+            "src": "./frontend/package.json",
             "use": "@now/static-build",
             "config": {
                 "distDir": "build"

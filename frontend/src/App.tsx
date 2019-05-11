@@ -1,33 +1,35 @@
 import React, { Component } from 'react';
+import './App.css';
 import '@ionic/core/css/core.css';
 import '@ionic/core/css/ionic.bundle.css';
 import logo from './logo.svg';
-import './App.css';
 
 import {
   IonApp,
   IonContent,
-  IonCard,
-  IonCardHeader,
-  IonCardTitle,
-  IonCardSubtitle,
-  IonCardContent
+  IonHeader,
+  IonToolbar,
+  IonBackButton,
+  IonButtons,
+  IonTitle,
 } from '@ionic/react';
+import { Countdown } from './countdown/Countdown';
 
 class App extends Component {
   render() {
     return (
       <IonApp>
+        <IonHeader>
+          <IonToolbar>
+            <IonButtons slot="start">
+              <IonBackButton goBack={() => { }} />
+            </IonButtons>
+            <IonTitle><img src={logo} className="genug-logo" alt="logo" />genug!</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+
         <IonContent>
-          <IonCard>
-            <IonCardHeader>
-              <IonCardSubtitle>genug!</IonCardSubtitle>
-              <IonCardTitle>What's next?</IonCardTitle>
-            </IonCardHeader>
-            <IonCardContent>
-            <img src={logo} className="App-logo" alt="logo" />
-            </IonCardContent>
-          </IonCard>
+          <Countdown timer={{ name: 'John plays Splatoon', remainingSecondsSinceLastStart: 13, started: new Date().toISOString(), status: 'paused' }} />
         </IonContent>
       </IonApp>
     );
