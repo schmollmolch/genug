@@ -7,18 +7,13 @@ import logo from './logo.svg';
 import {
   IonApp,
   IonContent,
-  IonCard,
-  IonCardHeader,
-  IonCardTitle,
-  IonCardSubtitle,
-  IonCardContent,
   IonHeader,
   IonToolbar,
   IonBackButton,
   IonButtons,
   IonTitle,
-  IonButton
 } from '@ionic/react';
+import { Countdown } from './countdown/Countdown';
 
 class App extends Component {
   render() {
@@ -34,15 +29,7 @@ class App extends Component {
         </IonHeader>
 
         <IonContent>
-          <IonCard>
-            <IonCardHeader>
-              <IonCardSubtitle>John plays Splatoon </IonCardSubtitle>
-              <IonCardTitle>1:07:43 s</IonCardTitle>
-            </IonCardHeader>
-            <IonCardContent>
-              <IonButton>Pause</IonButton>
-            </IonCardContent>
-          </IonCard>
+          <Countdown timer={{ name: 'John plays Splatoon', remainingSecondsSinceLastStart: 13, started: new Date().toISOString(), status: 'paused' }} />
         </IonContent>
       </IonApp>
     );

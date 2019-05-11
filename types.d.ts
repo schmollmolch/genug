@@ -4,8 +4,9 @@ export interface Parent {
 }
 
 export interface Timer {
+    name: string
     status: TimerStatus
-    started: string, // ISO timestamp
+    started: string // ISO timestamp
     remainingSecondsSinceLastStart: number
 }
 
