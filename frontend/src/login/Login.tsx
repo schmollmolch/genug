@@ -18,7 +18,7 @@ import {
 export class Login extends Component {
     render() {
         return <IonCard>
-            Login
+            <IonButton>Login...</IonButton>
         </IonCard>;
     }
 } 
