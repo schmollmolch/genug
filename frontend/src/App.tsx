@@ -16,7 +16,8 @@ import {
   IonToolbar,
   IonBackButton,
   IonButtons,
-  IonTitle
+  IonTitle,
+  IonButton
 } from '@ionic/react';
 
 class App extends Component {
@@ -35,11 +36,11 @@ class App extends Component {
         <IonContent>
           <IonCard>
             <IonCardHeader>
-              <IonCardSubtitle>Timer timer</IonCardSubtitle>
-              <IonCardTitle>Hello John!</IonCardTitle>
+              <IonCardSubtitle>John plays Splatoon </IonCardSubtitle>
+              <IonCardTitle>1:07:43 s</IonCardTitle>
             </IonCardHeader>
             <IonCardContent>
-              What's next?
+              <IonButton>Pause</IonButton>
             </IonCardContent>
           </IonCard>
         </IonContent>
