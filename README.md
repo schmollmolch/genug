@@ -1,4 +1,4 @@
-# ![genug](./assets/logo_32x32.png) genug! 
+# ![genug](./docs/assets/logo_32x32.png) genug! 
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/schmollmolch/genug.svg)](https://greenkeeper.io/)
 
