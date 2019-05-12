@@ -15,10 +15,8 @@ import {
     IonButton
 } from '@ionic/react';
 
-export class Login extends Component {
-    render() {
-        return <IonCard>
-            <IonButton>Login...</IonButton>
-        </IonCard>;
-    }
+export const Login = () => {
+    return <IonCard>
+        <IonButton>Login...</IonButton>
+    </IonCard>;
 } 

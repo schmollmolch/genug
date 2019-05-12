@@ -10,6 +10,18 @@ export interface Timer {
     remainingSecondsSinceLastStart: number
 }
 
-export type TimerStatus = 'paused' | 'running' | 'expired';
+export type TimerStatus = 'paused' | 'running' | 'expired'
 
 export type BackendStatus = 'fine' | 'trouble' | 'dead'
+
+export const createParent = (): Parent => ({
+    name: '',
+    timer: []
+})
+
+export const createTimer = (): Timer => ({
+    name: '',
+    status: 'paused',
+    started: '',
+    remainingSecondsSinceLastStart: 0
+})

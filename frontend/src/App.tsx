@@ -13,7 +13,7 @@ import {
   IonButtons,
   IonTitle,
 } from '@ionic/react';
-import { Countdown } from './countdown/Countdown';
+import { Countdown } from './countdown';
 
 class App extends Component {
   render() {

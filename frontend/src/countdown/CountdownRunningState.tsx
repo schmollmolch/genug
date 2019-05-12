@@ -10,31 +10,26 @@ import Log from '../common/Log';
 
 import { useTranslation } from "react-i18next";
 
-export class CountdownRunningState extends Component<{ state: TimerStatus }, { state: TimerStatus }> {
+interface Props { state: TimerStatus }
 
-    constructor(props: { state: TimerStatus }) {
-        super(props);
-        this.state = { ...this.props };
-    }
-
-    render() {
-        switch (this.state.state) {
-            case 'paused':
-                return (<IonButton onClick={e => this.continue(e)}><IonIcon slot="start" name="play"></IonIcon>Continue</IonButton>)
-            case 'running':
-                return (<IonButton onClick={e => this.pause(e)}><IonIcon slot="start" name="pause"></IonIcon>Pause</IonButton>)
-            case 'expired':
-                // return (<IonBadge color="danger">{t('TIMER_EXPIRED')}</IonBadge>)
-                return (<IonBadge color="danger">Timer Expired</IonBadge>)
-        }
-    }
-
-    continue(e: MouseEvent) {
+export const CountdownRunningState = (props: Props) => {
+    const [state, setState] = React.useState(props);
+    const run = (e: MouseEvent) => {
         Log.trace('paused->running', 'CountdownRunningState')
-        this.setState({ state: 'running' });
+        setState({ state: 'running' });
     }
-    pause(e: MouseEvent) {
+    const pause = (e: MouseEvent) => {
         Log.trace('running->paused', 'CountdownRunningState')
-        this.setState({ state: 'paused' });
+        setState({ state: 'paused' });
+    }
+
+    switch (state.state) {
+        case 'paused':
+            return (<IonButton onClick={e => run(e)}><IonIcon slot="start" name="play"></IonIcon>Continue</IonButton>)
+        case 'running':
+            return (<IonButton onClick={e => pause(e)}><IonIcon slot="start" name="pause"></IonIcon>Pause</IonButton>)
+        case 'expired':
+            // return (<IonBadge color="danger">{t('TIMER_EXPIRED')}</IonBadge>)
+            return (<IonBadge color="danger">Timer Expired</IonBadge>)
     }
 }
