@@ -8,24 +8,23 @@ import {
     IonButton,
     IonIcon
 } from '@ionic/react';
-import { Timer, TimerStatus } from '../../../types'
+import { Timer } from '../../../types'
 import { CountdownRunningState } from './CountdownRunningState';
 
-export class Countdown extends Component<{ timer: Timer }, Timer> {
-    constructor(props: { timer: Timer }) {
-        super(props);
-        this.state = this.props.timer;
-    }
+interface Props {
+    timer: Timer
+}
 
-    render() {
-        return <IonCard>
-            <IonCardHeader>
-                <IonCardSubtitle>{this.state.name}</IonCardSubtitle>
-                <IonCardTitle>{this.state.remainingSecondsSinceLastStart}s</IonCardTitle>
-            </IonCardHeader>
-            <IonCardContent>
-                <CountdownRunningState state={this.state.status}></CountdownRunningState>
-            </IonCardContent>
-        </IonCard>;
-    }
+export const Countdown = (props: Props) => {
+    const [state, setState] = React.useState(props.timer)
+
+    return <IonCard>
+        <IonCardHeader>
+            <IonCardSubtitle>{state.name}</IonCardSubtitle>
+            <IonCardTitle>{state.remainingSecondsSinceLastStart}s</IonCardTitle>
+        </IonCardHeader>
+        <IonCardContent>
+            <CountdownRunningState state={state.status}></CountdownRunningState>
+        </IonCardContent>
+    </IonCard>;
 } 
