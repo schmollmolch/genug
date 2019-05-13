@@ -1,0 +1,26 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2019-05-13 21:41+0200\n"
+"Mime-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/countdown/CountdownRunningState.tsx:18
+msgid "Continue"
+msgstr "Continue..."
+
+#: src/countdown/CountdownRunningState.tsx:20
+msgid "Pause"
+msgstr "Pause"
+
+#: src/countdown/CountdownRunningState.tsx:22
+msgid "Timer expired!"
+msgstr "Timer expired!"

@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "@ionic/react": "^0.0.5",
+    "@lingui/react": "^2.7.4",
     "debug": "^4.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -14,13 +15,19 @@
     "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@lingui/cli": "^2.7.4",
+    "@lingui/macro": "^2.7.4",
     "@types/debug": "^4.1.4",
     "@types/jest": "24.0.12",
+    "@types/lingui__macro": "^2.7.3",
+    "@types/lingui__react": "^2.5.2",
     "@types/node": "12.0.0",
     "@types/react": "16.8.17",
     "@types/react-dom": "16.8.4",
     "@types/react-router": "^5.0.0",
     "@types/react-router-dom": "^4.3.3",
+    "babel-core": "^7.0.0-bridge.0",
     "react-scripts": "^3.0.1",
     "tslint": "^5.16.0",
     "typescript": "3.4.5"
@@ -30,6 +37,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "add-locale": "lingui add-locale",
+    "extract": "lingui extract",
+    "compile": "lingui compile",
     "now-build": "SKIP_PREFLIGHT_CHECK=true npm run build"
   },
   "eslintConfig": {

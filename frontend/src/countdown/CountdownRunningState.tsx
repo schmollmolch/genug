@@ -6,6 +6,7 @@ import {
 } from '@ionic/react';
 
 import Log from '../common/Log';
+import { Trans } from '@lingui/macro';
 
 import { TimerStatus } from '../../../types'
 interface Props { state: TimerStatus }
@@ -26,10 +27,10 @@ export const CountdownRunningState = (props: Props) => {
 
     switch (state.state) {
         case 'paused':
-            return (<IonButton onClick={e => run(e)}><IonIcon slot="start" name="play"></IonIcon>Continue</IonButton>)
+            return (<IonButton onClick={e => run(e)}><IonIcon slot="start" name="play"></IonIcon><Trans>Continue</Trans></IonButton>)
         case 'running':
-            return (<IonButton onClick={e => pause(e)}><IonIcon slot="start" name="pause"></IonIcon>Pause</IonButton>)
+            return (<IonButton onClick={e => pause(e)}><IonIcon slot="start" name="pause"></IonIcon><Trans>Pause</Trans></IonButton>)
         case 'expired':
-            return (<IonBadge color="danger">Timer expired!</IonBadge>)
+            return (<IonBadge color="danger"><Trans>Timer expired!</Trans></IonBadge>)
     }
 }

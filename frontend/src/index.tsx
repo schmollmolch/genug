@@ -2,15 +2,22 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+import { I18nProvider } from '@lingui/react'
+import catalogDe from './locales/de/messages.js';
+import catalogEn from './locales/en/messages.js';
+
 import App from './App';
 
 import * as serviceWorker from './serviceWorker';
-import { IonApp, IonHeader, IonToolbar, IonTitle } from '@ionic/react';
 import LoadingApp from './LoadingApp';
+
+const catalogs = { de: catalogDe, en: catalogEn };
 
 ReactDOM.render(
     <Suspense fallback={<LoadingApp />}>
-        <App />
+        <I18nProvider language="de" catalogs={catalogs}>
+            <App />
+        </I18nProvider>
     </Suspense>,
     document.getElementById('root'));
 

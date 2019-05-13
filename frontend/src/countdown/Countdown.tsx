@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
     IonCard,
     IonCardHeader,
     IonCardTitle,
     IonCardSubtitle,
     IonCardContent,
-    IonButton,
-    IonIcon
 } from '@ionic/react';
 import { Timer } from '../../../types'
 import { CountdownRunningState } from './CountdownRunningState';
