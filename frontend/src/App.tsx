@@ -4,8 +4,6 @@ import '@ionic/core/css/core.css';
 import '@ionic/core/css/ionic.bundle.css';
 import logo from './logo.svg';
 
-import './i18n';
-
 import {
   IonApp,
   IonContent,
@@ -15,6 +13,8 @@ import {
   IonButtons,
   IonTitle,
 } from '@ionic/react';
+
+
 import { Countdown } from './countdown';
 
 const App = () => (
