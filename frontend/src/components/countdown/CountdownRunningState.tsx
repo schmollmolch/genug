@@ -5,27 +5,30 @@ import {
     IonBadge
 } from '@ionic/react';
 
-import Log from '../common/Log';
+import Log from '../../common/Log';
 import { Trans } from '@lingui/macro';
 
-import { TimerStatus } from '../../../types'
-interface Props { state: TimerStatus }
+import { TimerStatus } from '../../../../types'
+interface Props {
+    state: TimerStatus,
+    pause: () => void
+    continue: () => void;
+}
 
 export const CountdownRunningState = (props: Props) => {
 
-    // const t = (s: string) => s;
-    const [state, setState] = React.useState(props);
-
     const run = (e: MouseEvent) => {
         Log.trace('paused->running', 'CountdownRunningState')
-        setState({ state: 'running' });
+        // setState({ state: 'running' });
+        props.continue();
     }
     const pause = (e: MouseEvent) => {
         Log.trace('running->paused', 'CountdownRunningState')
-        setState({ state: 'paused' });
+        // setState({ state: 'paused' });
+        props.pause();
     }
 
-    switch (state.state) {
+    switch (props.state) {
         case 'paused':
             return (<IonButton onClick={e => run(e)}><IonIcon slot="start" name="play"></IonIcon><Trans>Continue</Trans></IonButton>)
         case 'running':

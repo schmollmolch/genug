@@ -14,24 +14,49 @@ import {
   IonTitle,
 } from '@ionic/react';
 
+import { connect } from "react-redux";
+import { Countdown } from './components/countdown';
+import { Timer } from '../../types';
+import { pauseTimer, continueTimer } from './store/timer/actions';
+import { AppState } from './store';
 
-import { Countdown } from './countdown';
+interface AppProps {
+  timers: Timer[],
+  userName: string,
+  pauseTimer: typeof pauseTimer,
+  continueTimer: typeof continueTimer
+}
 
-const App = () => (
-  <IonApp>
-    <IonHeader>
-      <IonToolbar>
-        <IonButtons slot="start">
-          <IonBackButton goBack={() => { }} />
-        </IonButtons>
-        <IonTitle><img src={logo} className="genug-logo" alt="logo" />genug!</IonTitle>
-      </IonToolbar>
-    </IonHeader>
+class App extends React.Component<AppProps> {
 
-    <IonContent>
-      <Countdown timer={{ name: 'John plays Splatoon', remainingSecondsSinceLastStart: 13, started: new Date().toISOString(), status: 'paused' }} />
-    </IonContent>
-  </IonApp>
-)
+  render() {
+    return (
+      <IonApp>
+        <IonHeader>
+          <IonToolbar>
+            <IonButtons slot="start">
+              <IonBackButton goBack={() => { }} />
+            </IonButtons>
+            <IonTitle><img src={logo} className="genug-logo" alt="logo" />genug!</IonTitle>
+          </IonToolbar>
+        </IonHeader>
 
-export default App;
+        <IonContent>
+          {this.props.timers.map(timer => (
+            <Countdown timer={timer} pauseTimer={() => this.props.pauseTimer(timer)} continueTimer={() => this.props.continueTimer(timer)} />
+          ))}
+        </IonContent>
+      </IonApp>
+    )
+  };
+}
+
+const mapStateToProps = (state: AppState) => ({
+  timers: state.timers.timers,
+  userName: state.timers.name
+});
+
+export default connect(
+  mapStateToProps,
+  { pauseTimer, continueTimer }
+)(App);
