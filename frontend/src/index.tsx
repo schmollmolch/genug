@@ -13,8 +13,13 @@ import { Provider } from 'react-redux'
 import App from './App';
 import LoadingApp from './LoadingApp';
 import configureStore from './store';
+import moment from 'moment';
 
 const catalogs = { de: catalogDe, en: catalogEn };
+// FIXME: load locale upon language change and maybe not using require
+require('moment/locale/de');
+moment.locale('de');
+
 const store = configureStore();
 
 ReactDOM.render(
