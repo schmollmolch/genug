@@ -43,7 +43,7 @@ class App extends React.Component<AppProps> {
 
         <IonContent>
           {this.props.timers.map(timer => (
-            <Countdown timer={timer} pauseTimer={() => this.props.pauseTimer(timer)} continueTimer={() => this.props.continueTimer(timer)} />
+            <Countdown key={timer.id} timer={timer} pauseTimer={() => this.props.pauseTimer(timer)} continueTimer={() => this.props.continueTimer(timer)} />
           ))}
         </IonContent>
       </IonApp>

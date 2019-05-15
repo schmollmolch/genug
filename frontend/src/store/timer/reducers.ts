@@ -21,13 +21,13 @@ export function timerReducer(
         case 'CONTINUE': {
             return {
                 ...state,
-                timers: state.timers.map(t => t.id == action.timer.id ? { ...t, status: 'running' } : t)
+                timers: state.timers.map(t => t.id === action.timer.id ? { ...t, status: 'running' } : t)
             };
         }
         case 'PAUSE': {
             return {
                 ...state,
-                timers: state.timers.map(t => t.id == action.timer.id ? { ...t, status: 'paused' } : t)
+                timers: state.timers.map(t => t.id === action.timer.id ? { ...t, status: 'paused' } : t)
             };
         }
         default:
