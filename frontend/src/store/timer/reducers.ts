@@ -1,4 +1,5 @@
 import { TimerState, ActionTypes } from "./types";
+import moment from 'moment';
 
 const initialState: TimerState = ({
     name: 'Heather',
@@ -21,13 +22,13 @@ export function timerReducer(
         case 'CONTINUE': {
             return {
                 ...state,
-                timers: state.timers.map(t => t.id === action.timer.id ? { ...t, status: 'running' } : t)
+                timers: state.timers.map(t => t.id === action.timer.id ? { ...t, status: 'running', started: new Date().toISOString() } : t)
             };
         }
         case 'PAUSE': {
             return {
                 ...state,
-                timers: state.timers.map(t => t.id === action.timer.id ? { ...t, status: 'paused' } : t)
+                timers: state.timers.map(t => t.id === action.timer.id ? { ...t, status: 'paused', remainingSecondsSinceLastStart: t.remainingSecondsSinceLastStart - moment().diff(moment(t.started), 'seconds') } : t)
             };
         }
         default:
