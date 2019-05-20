@@ -23,7 +23,7 @@
     "@types/lingui__macro": "^2.7.3",
     "@types/lingui__react": "^2.5.2",
     "@types/node": "12.0.2",
-    "@types/react": "16.8.17",
+    "@types/react": "16.8.18",
     "@types/react-dom": "16.8.4",
     "@types/react-router": "^5.0.0",
     "@types/react-router-dom": "^4.3.3",
