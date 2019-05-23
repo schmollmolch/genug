@@ -5,6 +5,7 @@
   "homepage": "http://genug.co/",
   "license": "MIT",
   "dependencies": {
+    "@capacitor/core": "^1.0.0",
     "@ionic/react": "^0.0.5",
     "@lingui/react": "^2.7.4",
     "debug": "^4.1.1",
@@ -14,10 +15,12 @@
     "react-redux": "^7.0.3",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "rxjs": "^6.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
+    "@capacitor/cli": "^1.0.0",
     "@lingui/cli": "^2.7.4",
     "@lingui/macro": "^2.7.4",
     "@types/debug": "^4.1.4",

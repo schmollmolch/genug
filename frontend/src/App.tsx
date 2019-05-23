@@ -15,16 +15,12 @@ import {
 } from '@ionic/react';
 
 import { connect } from "react-redux";
-import { Countdown } from './components/countdown';
-import { Timer } from '../../types';
-import { pauseTimer, continueTimer } from './store/timer/actions';
 import { AppState } from './store';
+import Parent from './components/parent/Parent';
+import { Login } from './components/login';
 
 interface AppProps {
-  timers: Timer[],
-  userName: string,
-  pauseTimer: typeof pauseTimer,
-  continueTimer: typeof continueTimer
+  loggedIn: boolean
 }
 
 class App extends React.Component<AppProps> {
@@ -42,9 +38,9 @@ class App extends React.Component<AppProps> {
         </IonHeader>
 
         <IonContent>
-          {this.props.timers.map(timer => (
-            <Countdown key={timer.id} timer={timer} pauseTimer={() => this.props.pauseTimer(timer)} continueTimer={() => this.props.continueTimer(timer)} />
-          ))}
+          {(this.props.loggedIn) ?
+            <Parent /> : <Login />
+          }
         </IonContent>
       </IonApp>
     )
@@ -52,11 +48,10 @@ class App extends React.Component<AppProps> {
 }
 
 const mapStateToProps = (state: AppState) => ({
-  timers: state.timers.timers,
-  userName: state.timers.name
+  loggedIn: state.auth.isLoggedIn || true
 });
 
 export default connect(
   mapStateToProps,
-  { pauseTimer, continueTimer }
+  // { pauseTimer, continueTimer }
 )(App);

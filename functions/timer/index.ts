@@ -9,7 +9,8 @@ app.use(helmet());
 app.get('*', (req, res) => {
 
     const timer: Timer = {
-        remainingSecondsSinceLastStart: 23,
+        id: 'fancy_new_uuid_substitute',
+        remainingSecondsSinceLastStart: 3576,
         started: new Date().toISOString(),
         status: 'paused',
         name: 'John plays Splatoon'
