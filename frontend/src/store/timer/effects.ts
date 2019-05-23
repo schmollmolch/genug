@@ -1,17 +1,18 @@
 import { Observable } from 'rxjs';
-import { delay, map } from 'rxjs/operators';
-import { ofType } from 'redux-observable';
-import { User } from "../../../../types";
-import { ActionTypes } from "./types";
-import { continueTimer } from './actions';
+import { delay, map, flatMap, filter } from 'rxjs/operators';
+import { ofType, combineEpics } from 'redux-observable';
+import { Timer } from "../../../../types";
+import { TimerActionTypes, PAUSE_TIMER } from "./types";
+import { continueTimer, addTimer } from './actions';
+import { AuthActionTypes, LOGIN_SUCCEEDED } from '../auth/types';
 
-export const getParent = (account: string): Observable<User> => {
-    return Observable.create(fetch(`/api/timer/${account}`, {
+const getTimer = (account: string): Observable<Timer> => {
+    return Observable.create(fetch(`/api/timer/${encodeURI(account)}`, {
         headers:
             { accept: 'application/json' },
     })
         .then(checkStatus)
-        .then(res => res.json() as Promise<User>));
+        .then(res => res.json() as Promise<Timer>));
 }
 
 const checkStatus = (response: Response) => {
@@ -25,8 +26,17 @@ const checkStatus = (response: Response) => {
     throw error;
 }
 
-export const pauseEffect = (action$: Observable<ActionTypes>) => action$.pipe(
-    ofType('PAUSE'),
+const pauseEffect = (action$: Observable<TimerActionTypes>) => action$.pipe(
+    ofType(PAUSE_TIMER),
     delay(3000),
     map(a => continueTimer(a.timer))
 );
+
+const loadAfterLogin = (action$: Observable<AuthActionTypes>) => action$.pipe(
+    ofType(LOGIN_SUCCEEDED),
+    map(a => a.email || ''),
+    flatMap(getTimer),
+    map(addTimer)
+);
+
+export const timerEffects = combineEpics(pauseEffect, loadAfterLogin);

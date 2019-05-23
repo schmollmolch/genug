@@ -5,17 +5,20 @@ export interface AuthState {
     email?: string
 }
 
-export const LOGIN_FB = 'FB';
-export const LOGIN_GITHUB = 'GITHUB';
-export const SUCCEEDED = 'SUCCEEDED';
+export const LOGIN_FB = 'LOGIN_FB';
+export const LOGIN_GITHUB = 'LOGIN_GITHUB';
+export const LOGIN_SUCCEEDED = 'LOGIN_SUCCEEDED';
+
+// interface LoginAction {
+//     type: typeof LOGIN_FB | typeof LOGIN_GITHUB | typeof LOGIN_SUCCEEDED;
+//     email?: string
+// }
+
+// export type AuthActionTypes = LoginAction;
 
 interface LoginAction {
-    type: typeof LOGIN_FB | typeof LOGIN_GITHUB;
+    type: typeof LOGIN_FB | typeof LOGIN_GITHUB | typeof LOGIN_SUCCEEDED;
+    email?: string
 }
 
-interface LoginSuceededAction {
-    type: typeof SUCCEEDED;
-    email: string
-}
-
-export type ActionTypes = LoginAction | LoginSuceededAction;
+export type AuthActionTypes = LoginAction;

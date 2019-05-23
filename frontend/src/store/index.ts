@@ -4,12 +4,12 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import { timerReducer } from "./timer/reducers";
 import { authReducer } from "./auth/reducers";
-import { loginFbEffect } from "./auth/effects";
-import { pauseEffect } from "./timer/effects";
+import { authEffects } from "./auth/effects";
+import { timerEffects } from "./timer/effects";
 
 export const rootEpic = combineEpics(
-    loginFbEffect,
-    pauseEffect
+    authEffects,
+    timerEffects
 );
 
 const rootReducer = combineReducers({

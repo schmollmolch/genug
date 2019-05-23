@@ -7,8 +7,8 @@ const app = express();
 app.use(helmet());
 
 app.get('*', (req, res) => {
-    const uid = req.query('uid');
-    if (!uid) {
+    const id = req.query.id;
+    if (!id) {
         res.status(401).send('Unauthorized');
     } else {
         const timer: Timer = {
