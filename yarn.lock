@@ -970,6 +970,11 @@
   dependencies:
     ionicons "4.5.6"
 
+"@ionic/pwa-elements@^1.2.7":
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/@ionic/pwa-elements/-/pwa-elements-1.2.7.tgz#ef657598843a80e07e7c6e87d5f256436030abae"
+  integrity sha512-WYE70iaUF7Er8l6wk/hC0e1rVTRz4fUiArNrFVFA986CK9kYFDfkOA+B7y+V2FCXqCif2k7Tc9T1Fw+4HoH5wA==
+
 "@ionic/react@^0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@ionic/react/-/react-0.0.5.tgz#7a0bc4531244acd2f1dd0be92c2accb1086136f9"
@@ -9397,6 +9402,11 @@ redux-devtools@^3.5.0:
     lodash "^4.2.0"
     prop-types "^15.5.7"
     redux-devtools-instrument "^1.9.0"
+
+redux-observable@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/redux-observable/-/redux-observable-1.1.0.tgz#323a8fe53e89fdb519be2807b55f08e21c13e6f1"
+  integrity sha512-G0nxgmTZwTK3Z3KoQIL8VQu9n0YCUwEP3wc3zxKQ8zAZm+iYkoZvBqAnBJfLi4EsD1E64KR4s4jFH/dFXpV9Og==
 
 redux@^3.6.0:
   version "3.7.2"

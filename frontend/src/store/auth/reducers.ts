@@ -1,4 +1,4 @@
-import { AuthState, ActionTypes } from "./types";
+import { AuthState, ActionTypes, SUCCEEDED, LOGIN_GITHUB, LOGIN_FB } from "./types";
 
 const initialState: AuthState = ({
     isLoggedIn: false,
@@ -10,19 +10,26 @@ export function authReducer(
     action: ActionTypes
 ): AuthState {
     switch (action.type) {
-        case 'FB': {
+        case LOGIN_FB: {
             return {
                 ...state,
-                isLoggedIn: true,
+                isLoggedIn: 'inprogress',
                 loginProvider: 'fb'
             };
         }
-        case 'GITHUB': {
+        case LOGIN_GITHUB: {
+            return {
+                ...state,
+                isLoggedIn: 'inprogress',
+                loginProvider: 'github'
+            };
+        }
+        case SUCCEEDED: {
             return {
                 ...state,
                 isLoggedIn: true,
-                loginProvider: 'github'
-            };
+                email: action.email
+            }
         }
         default:
             return state;

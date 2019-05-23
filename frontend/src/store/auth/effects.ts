@@ -1,22 +1,11 @@
-import { User } from "../../../../types";
 import { Observable } from 'rxjs';
+import { ActionTypes } from "./types";
+import { ofType } from "redux-observable";
+import { delay, map } from "rxjs/operators";
+import { loginSucceeded } from "./actions";
 
-export const getParent = (account: string): Observable<User> => {
-    return Observable.create(fetch(`/api/timer/${account}`, {
-        headers:
-            { accept: 'application/json' },
-    })
-        .then(checkStatus)
-        .then(res => res.json() as Promise<User>));
-}
-
-const checkStatus = (response: Response) => {
-    if (response.status >= 200 && response.status < 300) {
-        return response;
-    }
-    const error = new Error(`HTTP Error ${response.statusText}`);
-    // error.status = response.statusText;
-    // error.response = response;
-    // console.log(error); // eslint-disable-line no-console
-    throw error;
-}
+export const loginFbEffect = (action$: Observable<ActionTypes>) => action$.pipe(
+    ofType('FB'),
+    delay(3000),
+    map(a => loginSucceeded('some@mail.com'))
+);

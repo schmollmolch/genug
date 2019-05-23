@@ -14,7 +14,9 @@ import App from './App';
 import LoadingApp from './LoadingApp';
 import configureStore from './store';
 import moment from 'moment';
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
+// FIXME: Do it this way: https://dev.to/stereobooster/i18n-of-react-with-linguijs-1-24oi
 const catalogs = { de: catalogDe, en: catalogEn };
 // FIXME: load locale upon language change and maybe not using require
 require('moment/locale/de');
@@ -36,3 +38,5 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.register();
+// Call the element loader after the app has been rendered the first time
+defineCustomElements(window);

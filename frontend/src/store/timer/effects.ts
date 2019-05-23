@@ -1,5 +1,9 @@
-import { User } from "../../../../types";
 import { Observable } from 'rxjs';
+import { delay, map } from 'rxjs/operators';
+import { ofType } from 'redux-observable';
+import { User } from "../../../../types";
+import { ActionTypes } from "./types";
+import { continueTimer } from './actions';
 
 export const getParent = (account: string): Observable<User> => {
     return Observable.create(fetch(`/api/timer/${account}`, {
@@ -20,3 +24,9 @@ const checkStatus = (response: Response) => {
     // console.log(error); // eslint-disable-line no-console
     throw error;
 }
+
+export const pauseEffect = (action$: Observable<ActionTypes>) => action$.pipe(
+    ofType('PAUSE'),
+    delay(3000),
+    map(a => continueTimer(a.timer))
+);

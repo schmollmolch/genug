@@ -16,42 +16,38 @@ import {
 
 import { connect } from "react-redux";
 import { AppState } from './store';
-import Parent from './components/parent/Parent';
+import { ParentView } from './components/parent';
 import { Login } from './components/login';
 
 interface AppProps {
   loggedIn: boolean
 }
 
-class App extends React.Component<AppProps> {
+const App = (props: AppProps) => {
+  return (
+    <IonApp>
+      <IonHeader>
+        <IonToolbar>
+          <IonButtons slot="start">
+            <IonBackButton goBack={() => { }} />
+          </IonButtons>
+          <IonTitle><img src={logo} className="genug-logo" alt="logo" />genug!</IonTitle>
+        </IonToolbar>
+      </IonHeader>
 
-  render() {
-    return (
-      <IonApp>
-        <IonHeader>
-          <IonToolbar>
-            <IonButtons slot="start">
-              <IonBackButton goBack={() => { }} />
-            </IonButtons>
-            <IonTitle><img src={logo} className="genug-logo" alt="logo" />genug!</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-
-        <IonContent>
-          {(this.props.loggedIn) ?
-            <Parent /> : <Login />
-          }
-        </IonContent>
-      </IonApp>
-    )
-  };
+      <IonContent>
+        {(props.loggedIn) ?
+          <ParentView /> : <Login />
+        }
+      </IonContent>
+    </IonApp>
+  )
 }
 
 const mapStateToProps = (state: AppState) => ({
-  loggedIn: state.auth.isLoggedIn || true
+  loggedIn: state.auth.isLoggedIn === true
 });
 
 export default connect(
-  mapStateToProps,
-  // { pauseTimer, continueTimer }
+  mapStateToProps
 )(App);

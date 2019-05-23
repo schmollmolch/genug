@@ -7,16 +7,20 @@ const app = express();
 app.use(helmet());
 
 app.get('*', (req, res) => {
+    const uid = req.query('uid');
+    if (!uid) {
+        res.status(401).send('Unauthorized');
+    } else {
+        const timer: Timer = {
+            id: 'fancy_new_uuid_substitute',
+            remainingSecondsSinceLastStart: 3576,
+            started: new Date().toISOString(),
+            status: 'paused',
+            name: 'John plays Splatoon'
+        };
 
-    const timer: Timer = {
-        id: 'fancy_new_uuid_substitute',
-        remainingSecondsSinceLastStart: 3576,
-        started: new Date().toISOString(),
-        status: 'paused',
-        name: 'John plays Splatoon'
-    };
-
-    res.status(200).json(timer);
+        res.status(200).json(timer);
+    }
 })
 
 export default app;

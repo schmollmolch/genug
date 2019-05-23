@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "@capacitor/core": "^1.0.0",
+    "@ionic/pwa-elements": "^1.2.7",
     "@ionic/react": "^0.0.5",
     "@lingui/react": "^2.7.4",
     "debug": "^4.1.1",
@@ -16,6 +17,7 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "redux": "^4.0.1",
+    "redux-observable": "^1.1.0",
     "rxjs": "^6.5.2"
   },
   "devDependencies": {

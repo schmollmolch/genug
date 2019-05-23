@@ -7,6 +7,7 @@ import { Countdown } from '../countdown';
 import { Timer } from '../../../../types';
 import { pauseTimer, continueTimer } from '../../store/timer/actions';
 import { AppState } from '../../store';
+import { registerPush } from './push';
 
 interface ParentProps {
   timers: Timer[],
@@ -15,7 +16,12 @@ interface ParentProps {
   continueTimer: typeof continueTimer
 }
 
-class Parent extends React.Component<ParentProps> {
+class ParentView extends React.Component<ParentProps> {
+
+  constructor(props: ParentProps) {
+    super(props);
+    registerPush();
+  }
 
   render() {
     return (
@@ -36,4 +42,4 @@ const mapStateToProps = (state: AppState) => ({
 export default connect(
   mapStateToProps,
   { pauseTimer, continueTimer }
-)(Parent);
+)(ParentView);

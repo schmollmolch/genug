@@ -13,14 +13,22 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/countdown/CountdownRunningState.tsx:18
+#: src/components/countdown/CountdownRunningState.tsx:18
 msgid "Continue"
 msgstr "Continue..."
 
-#: src/countdown/CountdownRunningState.tsx:20
+#: src/components/login/Login.tsx:14
+msgid "Hello Stranger"
+msgstr "Hello Stranger"
+
+#: src/components/login/Login.tsx:18
+msgid "Login"
+msgstr "Login"
+
+#: src/components/countdown/CountdownRunningState.tsx:20
 msgid "Pause"
 msgstr "Pause"
 
-#: src/countdown/CountdownRunningState.tsx:22
+#: src/components/countdown/CountdownRunningState.tsx:22
 msgid "Timer expired!"
 msgstr "Timer expired!"
