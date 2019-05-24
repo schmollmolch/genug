@@ -14,7 +14,7 @@
     ],
     "builds": [
         {
-            "src": "./functions/**/*.ts",
+            "src": "./functions/**/index.ts",
             "use": "@now/node"
         },
         {
