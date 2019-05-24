@@ -25,9 +25,7 @@ const Login = (props: LoginProps) => {
     return <IonCard>
         <IonCardHeader><IonCardTitle><Trans>Hello Stranger</Trans></IonCardTitle></IonCardHeader>
         <IonCardContent>
-            {props.loginInProgress ?
-                <IonSpinner /> :
-                <IonButton onClick={e => pause(e)}><Trans>Login</Trans>...</IonButton>}
+            <IonButton disabled={props.loginInProgress} onClick={e => pause(e)}><Trans>Login</Trans>...</IonButton>
         </IonCardContent>
     </IonCard>
 }

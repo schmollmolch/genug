@@ -9,6 +9,9 @@ import { pauseTimer, continueTimer } from '../../store/timer/actions';
 import { AppState } from '../../store';
 import { registerPush } from './push';
 
+import { Progress } from '../common';
+import { I18n } from '@lingui/react';
+
 interface ParentProps {
   timers: Timer[],
   userName: string,
@@ -28,7 +31,9 @@ class ParentView extends React.Component<ParentProps> {
       <div>
         {this.props.timers.map(timer => (
           <Countdown key={timer.id} timer={timer} pauseTimer={() => this.props.pauseTimer(timer)} continueTimer={() => this.props.continueTimer(timer)} />
-        ))}
+        ))
+        }
+        {(this.props.timers.length === 0) && (<Progress title="Loading" />)}
       </div>
     )
   };
