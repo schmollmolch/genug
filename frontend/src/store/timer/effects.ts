@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
 import { delay, map, flatMap, filter } from 'rxjs/operators';
 import { ofType, combineEpics } from 'redux-observable';
 import { Timer } from "../../../../types";
@@ -7,7 +7,7 @@ import { continueTimer, addTimer } from './actions';
 import { AuthActionTypes, LOGIN_SUCCEEDED } from '../auth/types';
 
 const getTimer = (account: string): Observable<Timer> => {
-    return Observable.create(fetch(`/api/timer/${encodeURI(account)}`, {
+    return from(fetch(`/api/timer/${encodeURI(account)}`, {
         headers:
             { accept: 'application/json' },
     })
@@ -28,7 +28,7 @@ const checkStatus = (response: Response) => {
 
 const pauseEffect = (action$: Observable<TimerActionTypes>) => action$.pipe(
     ofType(PAUSE_TIMER),
-    delay(3000),
+    delay(30000),
     map(a => continueTimer(a.timer))
 );
 

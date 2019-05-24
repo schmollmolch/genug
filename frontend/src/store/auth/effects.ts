@@ -6,7 +6,7 @@ import { loginSucceeded } from "./actions";
 
 const loginFbEffect = (action$: Observable<AuthActionTypes>) => action$.pipe(
     ofType(LOGIN_FB),
-    delay(3000),
+    delay(500),
     map(a => loginSucceeded('some@mail.com'))
 );
 
