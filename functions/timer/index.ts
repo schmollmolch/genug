@@ -1,5 +1,6 @@
 import express from 'express';
 import helmet from 'helmet';
+import yeast from 'yeast';
 
 import { Timer } from "../../types";
 
@@ -12,7 +13,7 @@ app.get('*', (req, res) => {
         res.status(401).send('Unauthorized');
     } else {
         const timer: Timer = {
-            id: 'fancy_new_uuid_substitute',
+            id: yeast(),
             remainingSecondsSinceLastStart: 3576,
             started: new Date().toISOString(),
             status: 'paused',

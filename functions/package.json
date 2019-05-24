@@ -16,6 +16,7 @@
     "typescript": "^3.2.4"
   },
   "dependencies": {
-    "helmet": "^3.18.0"
+    "helmet": "^3.18.0",
+    "yeast": "^0.1.2"
   }
 }
