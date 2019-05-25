@@ -1,0 +1,7 @@
+{
+  "appId": "co.genug",
+  "appName": "genug",
+  "bundledWebRuntime": true,
+  "npmClient": "yarn",
+  "webDir": "build"
+}

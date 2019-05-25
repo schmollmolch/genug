@@ -4,8 +4,8 @@
     "alias": "genug.co",
     "routes": [
         {
-            "src": "/api/(.*)",
-            "dest": "/functions/$1"
+            "src": "/api/(?<func>[^/]+)/(?<id>[^/]+)",
+            "dest": "/functions/$func?id=$id"
         },
         {
             "src": "/(.*)",
@@ -14,7 +14,7 @@
     ],
     "builds": [
         {
-            "src": "./functions/**/*.ts",
+            "src": "./functions/**/index.ts",
             "use": "@now/node"
         },
         {

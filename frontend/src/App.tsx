@@ -14,24 +14,40 @@ import {
   IonTitle,
 } from '@ionic/react';
 
+import { connect } from "react-redux";
+import { AppState } from './store';
+import { ParentView } from './components/parent';
+import { Login } from './components/login';
 
-import { Countdown } from './countdown';
+interface AppProps {
+  loggedIn: boolean
+}
 
-const App = () => (
-  <IonApp>
-    <IonHeader>
-      <IonToolbar>
-        <IonButtons slot="start">
-          <IonBackButton goBack={() => { }} />
-        </IonButtons>
-        <IonTitle><img src={logo} className="genug-logo" alt="logo" />genug!</IonTitle>
-      </IonToolbar>
-    </IonHeader>
+const App = (props: AppProps) => {
+  return (
+    <IonApp>
+      <IonHeader>
+        <IonToolbar>
+          <IonButtons slot="start">
+            <IonBackButton goBack={() => { }} />
+          </IonButtons>
+          <IonTitle><img src={logo} className="genug-logo" alt="logo" />genug!</IonTitle>
+        </IonToolbar>
+      </IonHeader>
 
-    <IonContent>
-      <Countdown timer={{ name: 'John plays Splatoon', remainingSecondsSinceLastStart: 13, started: new Date().toISOString(), status: 'paused' }} />
-    </IonContent>
-  </IonApp>
-)
+      <IonContent>
+        {(props.loggedIn) ?
+          <ParentView /> : <Login />
+        }
+      </IonContent>
+    </IonApp>
+  )
+}
 
-export default App;
+const mapStateToProps = (state: AppState) => ({
+  loggedIn: state.auth.isLoggedIn === true
+});
+
+export default connect(
+  mapStateToProps
+)(App);

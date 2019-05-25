@@ -1,12 +1,12 @@
 import debug from 'debug';
 
 const BASE = 'genug';
-const COLOURS = {
-    trace: 'lightblue',
-    info: 'blue',
-    warn: 'pink',
-    error: 'red'
-}; // choose better colours :)
+// const COLOURS = {
+//     trace: 'lightblue',
+//     info: 'blue',
+//     warn: 'pink',
+//     error: 'red'
+// }; // choose better colours :)
 
 class Log {
     generateMessage(level: string, message: string, source: string) {

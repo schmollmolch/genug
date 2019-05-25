@@ -1,9 +1,10 @@
-export interface Parent {
+export interface User {
     name: string
-    timer: Timer[]
+    timers: Timer[]
 }
 
 export interface Timer {
+    id: string
     name: string
     status: TimerStatus
     started: string // ISO timestamp
@@ -14,14 +15,3 @@ export type TimerStatus = 'paused' | 'running' | 'expired'
 
 export type BackendStatus = 'fine' | 'trouble' | 'dead'
 
-export const createParent = (): Parent => ({
-    name: '',
-    timer: []
-})
-
-export const createTimer = (): Timer => ({
-    name: '',
-    status: 'paused',
-    started: '',
-    remainingSecondsSinceLastStart: 0
-})
