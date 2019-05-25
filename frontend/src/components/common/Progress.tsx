@@ -1,3 +1,4 @@
+import React from 'react';
 import { IonCard, IonCardHeader, IonSpinner, IonCardSubtitle } from "@ionic/react";
 
 interface Props {

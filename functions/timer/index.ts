@@ -19,9 +19,7 @@ app.get('*', (req, res) => {
             status: 'paused',
             name: 'John plays Splatoon'
         };
-        // setTimeout(() =>
         res.status(200).json(timer)
-        // , 2000)
     }
 })
 
