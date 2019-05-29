@@ -1,4 +1,4 @@
-import { AuthActionTypes, LOGIN_FB, LOGIN_GITHUB, LOGIN_SUCCEEDED as LOGIN_SUCCEEDED } from "./types";
+import { AuthActionTypes, LOGIN_FB, LOGIN_GITHUB, LOGIN_SUCCEEDED } from "./types";
 
 export function loginFb(): AuthActionTypes {
     return {

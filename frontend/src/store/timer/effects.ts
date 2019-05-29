@@ -1,5 +1,5 @@
 import { Observable, from } from 'rxjs';
-import { delay, map, flatMap, filter } from 'rxjs/operators';
+import { delay, map, flatMap } from 'rxjs/operators';
 import { ofType, combineEpics } from 'redux-observable';
 import { Timer } from "../../../../types";
 import { TimerActionTypes, PAUSE_TIMER } from "./types";

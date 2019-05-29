@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    IonButton, IonSpinner, IonCard, IonCardTitle, IonCardContent, IonCardHeader
+    IonButton, IonCard, IonCardTitle, IonCardContent, IonCardHeader
 } from '@ionic/react';
 import { Trans } from '@lingui/macro';
 import { connect } from "react-redux";

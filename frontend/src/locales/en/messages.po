@@ -34,5 +34,5 @@ msgid "Timer expired!"
 msgstr "Timer expired!"
 
 #: src/components/common/Progress.tsx:3
-msgid "{0}"
-msgstr "{0}"
+#~ msgid "{0}"
+#~ msgstr "{0}"
