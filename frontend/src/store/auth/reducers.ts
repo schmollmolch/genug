@@ -1,4 +1,4 @@
-import { AuthState, AuthActionTypes, LOGIN_SUCCEEDED, LOGIN_GITHUB, LOGIN_FB } from "./types";
+import { AuthState, AuthActionTypes, LOGIN_SUCCEEDED, LOGIN_GITHUB, LOGIN_FB, LOGIN_FAILED } from "./types";
 
 const initialState: AuthState = ({
     isLoggedIn: false,
@@ -29,6 +29,14 @@ export function authReducer(
                 ...state,
                 isLoggedIn: true,
                 email: action.email
+            }
+        }
+        case LOGIN_FAILED: {
+            return {
+                ...state,
+                isLoggedIn: 'failed',
+                email: undefined,
+                loginProvider: 'none'
             }
         }
         default:

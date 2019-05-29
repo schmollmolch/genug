@@ -25,6 +25,10 @@ msgstr "Hello Stranger"
 msgid "Login"
 msgstr "Login"
 
+#: src/components/login/Login.tsx:16
+msgid "Login Failed"
+msgstr "Login Failed"
+
 #: src/components/countdown/CountdownRunningState.tsx:20
 msgid "Pause"
 msgstr "Pause"

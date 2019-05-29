@@ -1,10 +1,11 @@
-import { Observable, from } from 'rxjs';
-import { delay, map, flatMap } from 'rxjs/operators';
+import { Observable, from, of } from 'rxjs';
+import { delay, map, flatMap, catchError } from 'rxjs/operators';
 import { ofType, combineEpics } from 'redux-observable';
 import { Timer } from "../../../../types";
 import { TimerActionTypes, PAUSE_TIMER } from "./types";
 import { continueTimer, addTimer } from './actions';
 import { AuthActionTypes, LOGIN_SUCCEEDED } from '../auth/types';
+import { loginFailed } from '../auth/actions';
 
 const getTimer = (account: string): Observable<Timer> => {
     return from(fetch(`/api/timer/${encodeURI(account)}`, {
@@ -36,7 +37,11 @@ const loadAfterLogin = (action$: Observable<AuthActionTypes>) => action$.pipe(
     ofType(LOGIN_SUCCEEDED),
     map(a => a.email || ''),
     flatMap(getTimer),
-    map(addTimer)
+    map(addTimer),
+    catchError(err => {
+        console.error(err.message);
+        return of(loginFailed(err));
+    })
 );
 
 export const timerEffects = combineEpics(pauseEffect, loadAfterLogin);
