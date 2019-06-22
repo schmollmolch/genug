@@ -29,7 +29,7 @@ const App = (props: AppProps) => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton goBack={() => { }} />
+            <IonBackButton />
           </IonButtons>
           <IonTitle><img src={logo} className="genug-logo" alt="logo" />genug!</IonTitle>
         </IonToolbar>
