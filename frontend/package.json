@@ -10,7 +10,7 @@
     "@ionic/react": "^0.0.7",
     "@lingui/react": "2.7",
     "debug": "4.1",
-    "firebase": "~6.2.3",
+    "firebase": "~6.3.0",
     "moment-timezone": "0.5",
     "react": "16.8",
     "react-dom": "16.8",
