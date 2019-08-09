@@ -39,7 +39,7 @@
     "@types/react-router-dom": "4.3",
     "@types/redux-devtools": "3.0",
     "babel-core": "^7.0.0-bridge.0",
-    "react-scripts": "3.0",
+    "react-scripts": "~3.1.0",
     "redux-devtools": "3.5",
     "redux-devtools-extension": "2.13",
     "tslint": "5.16",
