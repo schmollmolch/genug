@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@babel/core": "~7.5.0",
-    "@capacitor/cli": "~1.1.1",
+    "@capacitor/cli": "~1.2.0",
     "@lingui/cli": "2.7",
     "@lingui/macro": "2.7",
     "@types/debug": "4.1",
