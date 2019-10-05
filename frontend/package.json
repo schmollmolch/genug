@@ -7,10 +7,11 @@
   "dependencies": {
     "@capacitor/core": "1.2",
     "@ionic/pwa-elements": "1.4",
-    "@ionic/react": "^0.0.10",
+    "@ionic/react": "^4.10.0-rc.3",
     "@lingui/react": "2.8",
     "debug": "4.1",
     "firebase": "~7.1.0",
+    "ionicons": "~4.6.3",
     "moment-timezone": "0.5",
     "react": "16.10",
     "react-dom": "16.10",
@@ -54,7 +55,7 @@
     "add-locale": "lingui add-locale",
     "extract": "lingui extract",
     "compile": "lingui compile",
-    "now-build": "SKIP_PREFLIGHT_CHECK=true npm run build"
+    "now-build": "SKIP_PREFLIGHT_CHECK=true yarn build"
   },
   "eslintConfig": {
     "extends": "react-app"
