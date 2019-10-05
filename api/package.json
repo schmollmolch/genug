@@ -1,23 +1,24 @@
 {
-  "name": "@genug/functions",
+  "name": "@genug/api",
   "version": "0.0.1",
-  "description": "Genug backend functions",
+  "description": "Genug backend api",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/schmollmolch/genug",
-    "directory": "functions"
+    "directory": "api"
   },
   "devDependencies": {
-    "@types/express": "4.17",
-    "@types/helmet": "^0.0.44",
+    "@now/node": "^1.0.1",
     "@types/yeast": "0.1",
     "nodemon": "1.19",
     "ts-node": "8.4",
     "typescript": "3.6.3"
   },
   "dependencies": {
-    "helmet": "3.21",
     "yeast": "0.1"
+  },
+  "engines": {
+    "node": ">=10.10"
   }
 }

@@ -1,6 +1,6 @@
-import debug from 'debug';
+import debug from "debug";
 
-const BASE = 'genug';
+const BASE = "genug";
 // const COLOURS = {
 //     trace: 'lightblue',
 //     info: 'blue',
@@ -9,33 +9,36 @@ const BASE = 'genug';
 // }; // choose better colours :)
 
 class Log {
-    generateMessage(level: string, message: string, source: string) {
-        // Set the prefix which will cause debug to enable the message
-        const namespace = `${BASE}:${level}`;
-        const createDebug = debug(namespace);
+  generateMessage(level: string, message: string, source: string) {
+    // Set the prefix which will cause debug to enable the message
+    const namespace = `${BASE}:${level}`;
+    const createDebug = debug(namespace);
 
-        // Set the colour of the message based on the level
-        // createDebug.color = COLOURS[level];
+    // Set the colour of the message based on the level
+    // createDebug.color = COLOURS[level];
 
-        if (source) { createDebug(source, message); }
-        else { createDebug(message); }
+    if (source) {
+      createDebug(source, message);
+    } else {
+      createDebug(message);
     }
+  }
 
-    trace(message: string, source: string) {
-        return this.generateMessage('trace', message, source);
-    }
+  trace(message: string, source: string) {
+    return this.generateMessage("trace", message, source);
+  }
 
-    info(message: string, source: string) {
-        return this.generateMessage('info', message, source);
-    }
+  info(message: string, source: string) {
+    return this.generateMessage("info", message, source);
+  }
 
-    warn(message: string, source: string) {
-        return this.generateMessage('warn', message, source);
-    }
+  warn(message: string, source: string) {
+    return this.generateMessage("warn", message, source);
+  }
 
-    error(message: string, source: string) {
-        return this.generateMessage('error', message, source);
-    }
+  error(message: string, source: string) {
+    return this.generateMessage("error", message, source);
+  }
 }
 
 export default new Log();

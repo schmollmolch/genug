@@ -1,9 +1,22 @@
-import React from 'react';
-import { IonCard, IonCardHeader, IonSpinner, IonCardSubtitle } from "@ionic/react";
+import React from "react";
+import {
+  IonCard,
+  IonCardHeader,
+  IonSpinner,
+  IonCardSubtitle
+} from "@ionic/react";
 
 interface Props {
-    title: string
+  title: string;
 }
 
-export const Progress = (props: Props) =>
-    (<IonCard><IonCardHeader><IonCardSubtitle><IonSpinner />{props.title}...</IonCardSubtitle></IonCardHeader > </IonCard>)
+export const Progress = (props: Props) => (
+  <IonCard>
+    <IonCardHeader>
+      <IonCardSubtitle>
+        <IonSpinner />
+        {props.title}...
+      </IonCardSubtitle>
+    </IonCardHeader>{" "}
+  </IonCard>
+);
