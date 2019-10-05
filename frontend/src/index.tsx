@@ -4,29 +4,21 @@ import './index.css';
 
 import * as serviceWorker from './serviceWorker';
 
-import { I18nProvider } from '@lingui/react'
-import catalogDe from './locales/de/messages.js';
-import catalogEn from './locales/en/messages.js';
+import { I18nProvider } from '@lingui/react';
+import { catalogs, defaultLocale } from "./i18n";
 
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 
 import App from './App';
 import LoadingApp from './LoadingApp';
 import configureStore from './store';
-import moment from 'moment';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
-
-// FIXME: Do it this way: https://dev.to/stereobooster/i18n-of-react-with-linguijs-1-24oi
-const catalogs = { de: catalogDe, en: catalogEn };
-// FIXME: load locale upon language change and maybe not using require
-require('moment/locale/de');
-moment.locale('de');
 
 const store = configureStore();
 
 ReactDOM.render(
     <Suspense fallback={<LoadingApp />}>
-        <I18nProvider language="de" catalogs={catalogs}>
+        <I18nProvider language={defaultLocale} catalogs={catalogs}>
             <Provider store={store}>
                 <App />
             </Provider>

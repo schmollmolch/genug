@@ -23,7 +23,11 @@ msgstr "Hallo Fremdling"
 
 #: src/components/login/Login.tsx:16
 msgid "Login"
-msgstr "Login"
+msgstr "Anmelden"
+
+#: src/components/login/Login.tsx:16
+msgid "Login Failed"
+msgstr "Anmelden geht grad nicht"
 
 #: src/components/countdown/CountdownRunningState.tsx:20
 msgid "Pause"
@@ -34,5 +38,5 @@ msgid "Timer expired!"
 msgstr "Zeit ist um. Bis bald!"
 
 #: src/components/common/Progress.tsx:3
-msgid "{0}"
-msgstr "{0}"
+#~ msgid "{0}"
+#~ msgstr "{0}"

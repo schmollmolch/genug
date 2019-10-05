@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    IonButton, IonSpinner, IonCard, IonCardTitle, IonCardContent, IonCardHeader
+    IonButton, IonCard, IonCardTitle, IonCardContent, IonCardHeader
 } from '@ionic/react';
 import { Trans } from '@lingui/macro';
 import { connect } from "react-redux";
@@ -11,12 +11,13 @@ import { AppState } from '../../store';
 
 interface LoginProps {
     loginInProgress: boolean,
+    loginFailed: boolean,
     loginFb: typeof loginFb,
     loginGithub: typeof loginGithub
 }
 
 const Login = (props: LoginProps) => {
-    const pause = (e: MouseEvent) => {
+    const login = (e: MouseEvent) => {
         Log.trace('login with FB', 'Login')
         // setState({ state: 'paused' });
         props.loginFb();
@@ -25,13 +26,14 @@ const Login = (props: LoginProps) => {
     return <IonCard>
         <IonCardHeader><IonCardTitle><Trans>Hello Stranger</Trans></IonCardTitle></IonCardHeader>
         <IonCardContent>
-            <IonButton disabled={props.loginInProgress} onClick={e => pause(e)}><Trans>Login</Trans>...</IonButton>
+            {(props.loginFailed) ? (<IonButton disabled={true} color={'danger'}><Trans>Login Failed</Trans>!</IonButton>) : (<IonButton disabled={props.loginInProgress} onClick={login}><Trans>Login</Trans>...</IonButton>)}
         </IonCardContent>
     </IonCard>
 }
 
 const mapStateToProps = (state: AppState) => ({
-    loginInProgress: state.auth.isLoggedIn === 'inprogress'
+    loginInProgress: state.auth.isLoggedIn === 'inprogress',
+    loginFailed: state.auth.isLoggedIn === 'failed'
 });
 
 export default connect(
