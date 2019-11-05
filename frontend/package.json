@@ -23,7 +23,7 @@
     "rxjs": "6.5"
   },
   "devDependencies": {
-    "@babel/core": "~7.6.2",
+    "@babel/core": "~7.7.0",
     "@capacitor/cli": "~1.2.1",
     "@lingui/cli": "2.8",
     "@lingui/macro": "2.8",
