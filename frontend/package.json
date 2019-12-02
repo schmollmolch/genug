@@ -8,7 +8,7 @@
     "@capacitor/core": "1.2",
     "@ionic/pwa-elements": "1.4",
     "@ionic/react": "^4.10.0-rc.3",
-    "@lingui/react": "2.8",
+    "@lingui/react": "~2.9.0",
     "debug": "4.1",
     "firebase": "~7.1.0",
     "ionicons": "~4.6.3",
