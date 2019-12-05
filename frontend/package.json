@@ -41,7 +41,7 @@
     "@types/redux-devtools": "3.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-macros": "2.6",
-    "react-scripts": "3.2",
+    "react-scripts": "~3.3.0",
     "redux-devtools": "3.5",
     "redux-devtools-extension": "2.13",
     "tslint": "5.20",
