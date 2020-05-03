@@ -1,6 +1,6 @@
 import React from "react";
 import { IonButton, IonIcon, IonBadge } from "@ionic/react";
-import { play as playIcon, pause as pauseIcon } from "ionicons/icons";
+import { play, pause } from "ionicons/icons";
 
 import Log from "../../common/Log";
 import { Trans } from "@lingui/macro";
@@ -18,7 +18,7 @@ export const CountdownRunningState = (props: Props) => {
     // setState({ state: 'running' });
     props.continue();
   };
-  const pause = () => {
+  const paused = () => {
     Log.trace("running->paused", "CountdownRunningState");
     // setState({ state: 'paused' });
     props.pause();
@@ -28,14 +28,14 @@ export const CountdownRunningState = (props: Props) => {
     case "paused":
       return (
         <IonButton onClick={e => run()}>
-          <IonIcon slot="start" icon={playIcon} />
+          <IonIcon slot="start" icon={play} />
           <Trans>Continue</Trans>
         </IonButton>
       );
     case "running":
       return (
-        <IonButton onClick={e => pause()}>
-          <IonIcon slot="start" icon={pauseIcon} />
+        <IonButton onClick={e => paused()}>
+          <IonIcon slot="start" icon={pause} />
           <Trans>Pause</Trans>
         </IonButton>
       );
